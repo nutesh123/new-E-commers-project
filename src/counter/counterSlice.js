@@ -41,7 +41,6 @@ export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 //   if (currentValue % 2 === 1) {
 //     dispatch(incrementByAmount(amount));
 //   }
-
 // };
 
 export default counterSlice.reducer;
