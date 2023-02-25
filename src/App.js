@@ -1,23 +1,20 @@
-import { Fragment } from 'react';
-import { useSelector } from 'react-redux';
-
-import Counter from './components/Counter';
-import Header from './components/Header';
-import Auth from './components/auth';
-import UserProfile from './components/UserProfile';
+import React from 'react'
+import Header from './Header'
+import { Routes , Route } from 'react-router-dom'
+import Home from './Home'
+import Cart from './Cart'
 
 
 function App() {
-  const isAuth = useSelector(state => state.auth.isAuthenticated);
-
   return (
-    <Fragment>
-      <Header />
-      {!isAuth && <Auth />}
-      {isAuth && <UserProfile />}
-      <Counter />
-    </Fragment>
-  );
+    <div style={{backgroundColor: "lightblue"}}>
+      <Header></Header>
+      <Routes>
+        <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/cart' element={<Cart></Cart>}></Route>
+      </Routes>
+    </div>
+  )
 }
 
-export default App;
+export default App
